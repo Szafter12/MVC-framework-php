@@ -1,1 +1,1 @@
-# MVC Framework made in PHP
+# MVC php framework
