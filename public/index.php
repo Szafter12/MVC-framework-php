@@ -1,18 +1,18 @@
 <?php
 
-require_once __DIR__ . '../vendor/autoload.php';
+require_once __DIR__ . '/../vendor/autoload.php';
 
 use app\core\Application;
-use app\core\Router;
+use app\controllers\SiteController;
 
-$app = new Application();
+$siteController = new SiteController();
 
-$app->router->get('/', function () {
-    echo "Hello world";
-});
+$app = new Application(dirname(__DIR__));
 
-$app->router->get('/contact', function () {
-    echo "Contact";
-});
+$app->router->get('/', 'home');
+
+$app->router->get('/contact', 'contact');
+
+$app->router->post('/contact', [$siteController, 'handleForm']);
 
 $app->run();
