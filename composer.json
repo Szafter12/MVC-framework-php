@@ -2,7 +2,7 @@
 	"name": "schafter/mvc-framework-php",
 	"autoload": {
 		"psr-4": {
-			"app\\": "src/"
+			"app\\": "./"
 		}
 	},
 	"authors": [
