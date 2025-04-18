@@ -1,0 +1,15 @@
+{
+	"name": "schafter/mvc-framework-php",
+	"autoload": {
+		"psr-4": {
+			"app\\": "src/"
+		}
+	},
+	"authors": [
+		{
+			"name": "Jakub",
+			"email": "jakubpachut@gmail.com"
+		}
+	],
+	"require": {}
+}
