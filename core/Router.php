@@ -41,7 +41,7 @@ class Router
         return call_user_func($callback);
     }
 
-    protected function renderView($view)
+    public function renderView($view)
     {
         $layoutContent = $this->layoutContent();
         $viewContent = $this->renderViewContent($view);
