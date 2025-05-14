@@ -1,5 +1,9 @@
 <h1>Register</h1>
-
+<?php
+echo "<pre>";
+var_dump($model);
+echo "</pre>";
+?>
 <form action="/register" method="post">
     <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">First name:</label>
