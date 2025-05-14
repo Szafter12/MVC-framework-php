@@ -2,6 +2,14 @@
 
 <form action="/register" method="post">
     <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">First name:</label>
+        <input type="text" class="form-control" id="exampleInputFirstName" name="firstName">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Second name:</label>
+        <input type="text" class="form-control" id="exampleInputSecondName" name="secondName">
+    </div>
+    <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Email address</label>
         <input type="email" class="form-control" id="exampleInputEmail1" name="email">
     </div>
@@ -11,7 +19,7 @@
     </div>
     <div class="mb-3">
         <label for="exampleInputPassword2" class="form-label">Password Repeat</label>
-        <input type="password" class="form-control" id="exampleInputPassword2" name="confirmPassword">
+        <input type="password" class="form-control" id="exampleInputPassword2" name="passwordRepeat">
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
