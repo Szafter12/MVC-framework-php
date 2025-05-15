@@ -1,32 +1,23 @@
-<h1>Register</h1>
 <?php
-echo "<pre>";
-var_dump($model->errors);
-echo "</pre>";
+
+use app\core\form\Form;
+
+$form = new Form();
 ?>
-<form action="/register" method="post">
-    <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">First name:</label>
-        <input type="text" class="form-control <?php echo $model->hasError('firstName') ? 'is-invalid' : '' ?>" id="exampleInputFirstName" value="<?php echo $model->firstName ?>" name="firstName">
-        <div class="invalid-feedback">
-            <?php echo $model->getFirstError('firstName') ?>
-        </div>
+
+<h1>Register</h1>
+
+<?php $form = Form::begin('', 'post') ?>
+<div class="row">
+    <div class="col">
+        <?php echo $form->field($model, 'firstname') ?>
     </div>
-    <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Second name:</label>
-        <input type="text" class="form-control" id="exampleInputSecondName" name="secondName">
+    <div class="col">
+        <?php echo $form->field($model, 'lastname') ?>
     </div>
-    <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Email address</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" name="email">
-    </div>
-    <div class="mb-3">
-        <label for="exampleInputPassword1" class="form-label">Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" name="password">
-    </div>
-    <div class="mb-3">
-        <label for="exampleInputPassword2" class="form-label">Password Repeat</label>
-        <input type="password" class="form-control" id="exampleInputPassword2" name="passwordRepeat">
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+</div>
+<?php echo $form->field($model, 'email') ?>
+<?php echo $form->field($model, 'password')->passwordField() ?>
+<?php echo $form->field($model, 'passwordConfirm')->passwordField() ?>
+<button class="btn btn-success">Submit</button>
+<?php Form::end() ?>
