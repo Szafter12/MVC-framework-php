@@ -1,13 +1,16 @@
 <h1>Register</h1>
 <?php
 echo "<pre>";
-var_dump($model);
+var_dump($model->errors);
 echo "</pre>";
 ?>
 <form action="/register" method="post">
     <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">First name:</label>
-        <input type="text" class="form-control" id="exampleInputFirstName" name="firstName">
+        <input type="text" class="form-control <?php echo $model->hasError('firstName') ? 'is-invalid' : '' ?>" id="exampleInputFirstName" value="<?php echo $model->firstName ?>" name="firstName">
+        <div class="invalid-feedback">
+            <?php echo $model->getFirstError('firstName') ?>
+        </div>
     </div>
     <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Second name:</label>
