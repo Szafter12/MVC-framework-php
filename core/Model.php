@@ -77,12 +77,28 @@ abstract class Model
         ];
     }
 
+    public function attributes()
+    {
+        return [];
+    }
+
+    public function labels()
+    {
+        return [];
+    }
+
+    public function getLabel($attribute)
+    {
+        return $this->labels()[$attribute] ?? $attribute;
+    }
+
     public function hasError($attribute)
     {
         return $this->errors[$attribute] ?? false;
     }
 
-    public function getFirstError($attribute) {
+    public function getFirstError($attribute)
+    {
         return $this->errors[$attribute][0] ?? false;
     }
 }
